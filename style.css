@@ -1,24 +1,30 @@
 /* style.css */
 
-/* Posicionamento do logo */
-.logo {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Estilos gerais do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffa1a1; /* Cor de fundo (ajuste conforme necessário) */
 }
 
-/* Centralização dos botões */
+/* Logo reduzido */
+.logo img {
+    width: 15%;
+}
+
+/* Botões */
 .home,
 .produtos,
 .contato {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Espaçamento entre os botões */
+    color: white;
+    background-color: #000000; /* Cor de fundo dos botões (ajuste conforme necessário) */
+    padding: 10px 20px;
+    border-radius: 5px; /* Borda arredondada */
 }
 
 /* Posicionamento da barra de pesquisa */
 .barra-pesquisa {
-    position: absolute;
-    top: 0;
-    right: 0;
+    margin-left: auto;
 }
