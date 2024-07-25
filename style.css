@@ -21,12 +21,6 @@ header {
     height: auto;
 }
 
-.link {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
 /* Estilos da barra de pesquisa */
 .barra-pesquisa input[type="text"] {
     width: 200px;
@@ -37,8 +31,23 @@ header {
 }
 
 /* Estilos dos links no cabeçalho */
-.home a:hover,
-.produtos a:hover,
-.contato a:hover {
+.lista-header {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.lista-header li {
+    margin: 0 10px;
+}
+
+.lista-header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.lista-header a:hover {
     color: #ff9900;
 }
