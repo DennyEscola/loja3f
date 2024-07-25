@@ -1,0 +1,44 @@
+/* style.css */
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Estilos da barra de pesquisa */
+.barra-pesquisa input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Estilos dos links no cabeçalho */
+.home a:hover,
+.produtos a:hover,
+.contato a:hover {
+    color: #ff9900;
+}
