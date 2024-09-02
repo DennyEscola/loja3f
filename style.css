@@ -24,6 +24,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
@@ -41,7 +42,7 @@ body {
   min-width: 216px;
 }
 
-.logo img{
+.logo img {
   width: 94%;
   object-fit: contain;
 }
@@ -54,54 +55,54 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--white);
   font-size: 1.3em;
   text-shadow: 1px 1px 5px var(--text-grey-mid);
+  overflow: hidden; /* Ensure content fits within the top bar */
+}
+
+.top a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.top a:hover {
+  color: var(--orange-weak);
 }
 
 .bottom {
   z-index: 1;
   width: 100%;
   height: 25px;
-  background-color: var(--orange-weak);
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-items: stretch;
+  background-color: var(--orange-weak);
+  color: var(--white);
   font-size: 1.3em;
-  text-shadow: 1px 1px 5px var(--text-grey-mid);
+  overflow: hidden; /* Ensure content is clipped by its parent */
 }
 
 .bottom button {
-  width: 10%;
+  flex-grow: 1;
   height: 100%;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.7em;
   font-weight: bold;
   color: var(--white);
   background-color: var(--orange-weak);
-  text-overflow: ellipsis;
-  overflow: hidden;
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .bottom button:hover {
   background-color: var(--orange-strong);
-}
-
-header a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-header a:hover {
-  color: var(--orange-weak);
 }
 
 .pesquisa {
@@ -121,7 +122,6 @@ header a:hover {
   border-radius: 8px;
   transition: border-color 0.2s;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.7em;
   color: var(--orange-text);
   box-shadow: 2px 2px 5px var(--text-grey-mid);
@@ -130,51 +130,102 @@ header a:hover {
 }
 
 .pesquisa input:hover {
-  border: 2.5px solid var(--orange-strong);
+  border-color: var(--orange-strong);
 }
 
 .pesquisa button {
   width: 30%;
-  height: 108%;
+  height: 100%;
   border: 1px solid var(--orange-weak);
   border-radius: 8px;
-  transition: border-color 0.2s;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 0.7em;
-  color: var(--white);
   background-color: var(--orange-weak);
+  color: var(--white);
   box-shadow: 2px 2px 5px var(--text-grey-mid);
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 .pesquisa button:hover {
   background-color: var(--orange-strong);
-  border: 2.5px solid var(--orange-strong);
+  border-color: var(--orange-strong);
 }
 
 .secoes {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 96%;
   display: flex;
-  margin: 10px;
+  gap: 14px;
+  padding: 0;
+  margin: 10px auto;
+  list-style: none;
 }
 
 .secao {
-  background-color: var(--blue);
-  border: 2.5px solid var(--orange-weak);
+  width: 170px;
+  height: 270px;
+  padding: 10px;
+  text-align: center;
   border-radius: 8px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2.5px solid var(--orange-weak);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin: auto;
-  width: 30%;
-  height: 20%;
+  justify-content: space-between;
 }
 
-.secao img {
-  width: 90%;
-  height: auto;
-  object-fit: crop;
+.secao-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.secao-content img {
+  width: 100%;
+  height: wid;
+  max-height: 170px;
+  object-fit: cover;
   border-radius: 8px;
-  margin: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.secao-content h2 {
+  margin: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.secao-content p {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.secao-content button {
+  width: 100%;
+  border: 1px solid var(--orange-strong);
+  border-radius: 8px;
+  background-color: var(--orange-weak);
+  color: var(--white);
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px var(--text-grey-mid);
+  transition: background-color 0.2s, border-color 0.2s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.secao-content button:hover {
+  background-color: var(--orange-strong);
+  border-color: var(--orange-strong);
 }
